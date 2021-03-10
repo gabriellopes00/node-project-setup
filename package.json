@@ -11,12 +11,11 @@
     "style:fix": "prettier --write **/*.ts",
     "lint": "eslint src tests --ext .ts",
     "lint:fix": "eslint src tests --ext .ts --fix",
-    "test": "jest --passWithNoTests --noStackTrace --runInBand --no-cache",
+    "test": "jest --passWithNoTests --silent --noStackTrace --runInBand --no-cache",
     "test:cache": "jest --clearCache",
-    "test:ci": "yarn test:unit && yarn test:func --coverage",
+    "test:ci": "yarn test --coverage",
     "test:unit": "yarn test -c jest-unit-config.js",
-    "test:func": "yarn test --projects tests/",
-    "test:full": "yarn test:unit && yarn test:func --silent",
+    "test:func": "yarn test -c jest-functional-config.js",
     "test:coveralls": "yarn test:ci && coveralls < coverage/lcov.info"
   },
   "repository": {
