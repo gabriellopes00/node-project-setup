@@ -1,24 +1,25 @@
 const { resolve } = require('path')
-const root = resolve(__dirname)
 
 module.exports = {
-  rootDir: root,
+  rootDir: resolve(__dirname),
   testEnvironment: 'node',
   collectCoverageFrom: [
     '<rootDir>/**/*.ts',
     '!<rootDir>/**/*.d.ts',
-    '!<rootDir>/**/main/*.ts',
-    '!<rootDir>/**/config/*.ts'
+    '!<rootDir>/**/app/**',
+    '!<rootDir>/**/ports/*.ts',
+    '!<rootDir>/src/domain/**',
+    '!<rootDir>/**/migrations/**',
+    '!<rootDir>/**/config/**'
   ],
+  testPathIgnorePatterns: ['<rootDir>/tests/mocks/'],
+  testMatch: [__dirname + '/tests/**/*.test.ts'],
   coverageDirectory: 'coverage/',
   coverageProvider: 'v8',
   clearMocks: true,
   preset: 'ts-jest',
-  // preset: '@shelf/jest-mongodb', <== if using mongodb in memory database
-  // transform: {
-  //   '.+\\.ts$': 'ts-jest'
-  // },
   moduleNameMapper: {
-    '@/(.*)': '<rootDir>/src/$1'
+    '@/(.*)': '<rootDir>/src/$1',
+    '@t/(.*)': '<rootDir>/tests/$1'
   }
 }

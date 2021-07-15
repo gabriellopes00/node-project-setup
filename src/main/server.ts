@@ -1,5 +1,5 @@
 import 'module-alias/register'
+import 'dotenv/config'
 import logger from '../config/logger'
-import { port } from '@/config/env'
 
-logger.info(port)
+logger.info(process.env.PORT)

@@ -1,8 +1,4 @@
-import * as path from 'path'
-import moduleAlias from 'module-alias'
+import { resolve, join } from 'path'
+import { addAliases } from 'module-alias'
 
-const files = path.resolve(__dirname, '..', '..')
-
-moduleAlias.addAliases({
-  '@': path.join(files, 'src')
-})
+addAliases({ '@': join(resolve(__dirname, '..', '..'), 'src') })

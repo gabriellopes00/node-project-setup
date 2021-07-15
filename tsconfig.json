@@ -2,11 +2,10 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "commonjs",
-    "lib": ["ES6", "ES2020", "DOM"],
+    "lib": ["ES6", "ES2020"],
     "allowJs": true,
     "outDir": "dist/",
     "rootDir": ".",
-    "sourceMap": true,
     "removeComments": true,
     "typeRoots": ["node_modules/@types/", "@types/"],
     "esModuleInterop": true,
@@ -17,9 +16,10 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@t/*": ["tests/*"]
     }
   },
-  "include": ["src/**/*", "tests/**/*", "@types/**/*"],
-  "exclude": ["node_modules/", "dist/"]
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["node_modules/", "dist/", "coverage/"]
 }
