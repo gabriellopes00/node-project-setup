@@ -34,7 +34,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "module-alias": "^2.2.2",
-    "pino": "^6.11.1",
+    "pino": "^6.13.2",
     "pino-pretty": "^4.7.1"
   },
   "devDependencies": {
